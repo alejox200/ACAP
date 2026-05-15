@@ -5,13 +5,13 @@ import fondoACAP from '../assets/fondoACAP.jpg';
 export function HeroSection() {
   return (
     <section className="hero-section">
-      <div 
+      <div
         className="hero-background"
         style={{ backgroundImage: `url(${fondoACAP})` }}
       >
         <div className="hero-overlay"></div>
       </div>
-      
+
       <div className="container hero-container">
         <div className="hero-content animate-fade-in">
           <span className="hero-subtitle delay-1 animate-fade-in">Liderazgo Regional</span>
