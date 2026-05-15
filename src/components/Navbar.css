@@ -1,0 +1,147 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: transparent;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo-placeholder {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.logo-placeholder img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-placeholder.fallback-text {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  letter-spacing: -0.5px;
+}
+
+.scrolled .logo-placeholder.fallback-text {
+  color: var(--primary-blue);
+}
+
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .desktop-nav {
+    display: block;
+  }
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-family: var(--font-accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: white; /* Initial state for hero section */
+  position: relative;
+}
+
+.scrolled .nav-link {
+  color: var(--text-main);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-green);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: var(--secondary-green);
+}
+
+.mobile-menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrolled .mobile-menu-btn {
+  color: var(--primary-blue);
+}
+
+@media (min-width: 992px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+.mobile-nav {
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 1rem 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-top: 1px solid var(--border-color);
+}
+
+.mobile-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 1rem 2rem;
+  font-family: var(--font-accent);
+  font-weight: 500;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-nav-link:hover {
+  color: var(--secondary-green);
+  background-color: var(--bg-gray);
+}

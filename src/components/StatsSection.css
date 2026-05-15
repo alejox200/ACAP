@@ -1,0 +1,53 @@
+.stats-section {
+  padding: 4rem 0;
+  background-color: var(--primary-blue);
+  color: white;
+  margin-top: -2rem; /* Pull it up slightly over the hero section */
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stats-grid {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .md\:grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-card {
+  padding: 1.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-card:last-child {
+  border-right: none;
+}
+
+.stat-number {
+  font-size: 3rem;
+  color: var(--secondary-green);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-family: var(--font-accent);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 767px) {
+  .stat-card {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .stat-card:last-child {
+    border-bottom: none;
+  }
+}
